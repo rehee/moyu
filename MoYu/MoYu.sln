@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32516.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apis", "Apis", "{2A415041-E69B-4579-9CC4-874658766F22}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoYu.Api", "Apis\MoYu.Api\MoYu.Api.csproj", "{6CE6DC90-432F-41D1-ABC4-B06342693024}"
+	ProjectSection(ProjectDependencies) = postProject
+		{42EDAC72-7E9C-45B5-8110-8A3F6E24F822} = {42EDAC72-7E9C-45B5-8110-8A3F6E24F822}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Consoles", "Consoles", "{0A7772A7-1C75-43C4-B9BA-381911461E74}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entities", "Entities", "{F986EBEB-7041-4E90-9F7C-7BAED188B18A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoYu.App", "Consoles\Moyu.Console\MoYu.App\MoYu.App.csproj", "{EC91AF8C-FEC3-4601-9E9A-CD3C80F775CF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoYu.Entities", "Entities\MoYu.Entities\MoYu.Entities.csproj", "{42EDAC72-7E9C-45B5-8110-8A3F6E24F822}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6CE6DC90-432F-41D1-ABC4-B06342693024}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CE6DC90-432F-41D1-ABC4-B06342693024}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CE6DC90-432F-41D1-ABC4-B06342693024}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CE6DC90-432F-41D1-ABC4-B06342693024}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC91AF8C-FEC3-4601-9E9A-CD3C80F775CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC91AF8C-FEC3-4601-9E9A-CD3C80F775CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC91AF8C-FEC3-4601-9E9A-CD3C80F775CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC91AF8C-FEC3-4601-9E9A-CD3C80F775CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42EDAC72-7E9C-45B5-8110-8A3F6E24F822}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42EDAC72-7E9C-45B5-8110-8A3F6E24F822}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42EDAC72-7E9C-45B5-8110-8A3F6E24F822}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42EDAC72-7E9C-45B5-8110-8A3F6E24F822}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6CE6DC90-432F-41D1-ABC4-B06342693024} = {2A415041-E69B-4579-9CC4-874658766F22}
+		{EC91AF8C-FEC3-4601-9E9A-CD3C80F775CF} = {0A7772A7-1C75-43C4-B9BA-381911461E74}
+		{42EDAC72-7E9C-45B5-8110-8A3F6E24F822} = {F986EBEB-7041-4E90-9F7C-7BAED188B18A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B385F03-254C-42FA-80BE-6F06530E01F9}
+	EndGlobalSection
+EndGlobal
