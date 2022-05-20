@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MoYu.Entities.Items.Equipments
+namespace MoYu.Common.Skills
 {
-  public class BodyEquip : EquipmentBase
+  public static class GeneralSkills
   {
+    public const string DefaultAttackSkilName = "NormalAttack";
   }
 }

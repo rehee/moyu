@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MoYu.Entities.Items.Equipments
+namespace MoYu.Common.Infos
 {
-  public class WeaponEqip : ItemBase
+  public enum EnumInfoType
   {
-    public EnmWeaponHand WeaponHand { get; set; }
+    Combat
   }
 }

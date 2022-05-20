@@ -1,12 +1,14 @@
-﻿using System;
+﻿using MoYu.Common.Combats;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MoYu.Entities.Items.Equipments
+namespace MoYu.Common.Skills
 {
-  public class BodyEquip : EquipmentBase
+  public static class SkillExtends
   {
+
   }
 }

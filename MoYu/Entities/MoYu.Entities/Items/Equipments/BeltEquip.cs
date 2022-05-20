@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MoYu.Entities.Items.Equipments
 {
-  public class BodyEquip : EquipmentBase
+  public class BeltEquip: EquipmentBase
   {
   }
 }

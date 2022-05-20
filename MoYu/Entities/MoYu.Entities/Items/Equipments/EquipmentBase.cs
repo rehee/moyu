@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace MoYu.Entities.Items.Equipments
 {
-  public class GloveEquip : ItemBase
+  public abstract class EquipmentBase : MoYuItemBase
   {
+    public virtual void Equip()
+    {
+
+    }
+    public virtual void UnEquip()
+    {
+
+    }
   }
 }

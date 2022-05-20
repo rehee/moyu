@@ -20,8 +20,8 @@ namespace MoYu.Api.Controllers
 
     public IActionResult Index()
     {
-      
-      return View();
+
+      return Content("");
     }
 
     public IActionResult Privacy()

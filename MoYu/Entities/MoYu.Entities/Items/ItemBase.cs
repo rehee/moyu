@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MoYu.Common.Items;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,11 @@ using System.Threading.Tasks;
 
 namespace MoYu.Entities.Items
 {
-  public abstract class ItemBase: MoYuBase
+  public abstract class MoYuItemBase : MoYuBase, IMoYuItem
   {
+    public virtual void Use()
+    {
+
+    }
   }
 }

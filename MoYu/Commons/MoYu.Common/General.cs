@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MoYu.Entities.Items.Equipments
+namespace MoYu.Common
 {
-  public class BodyEquip : EquipmentBase
+  public static class General
   {
+    public const int FPS = 24;
+    public const int MaxDropPerDropper = 6;
   }
 }

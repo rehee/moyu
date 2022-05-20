@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MoYu.Entities.Items.Equipments
+namespace MoYu.Common.Skills
 {
-  public class BodyEquip : EquipmentBase
+  public enum EnumSkillType
   {
+    AttackSkill,
+    SpellSkill,
+    PassiveSkill,
+    OtherSkill
   }
 }

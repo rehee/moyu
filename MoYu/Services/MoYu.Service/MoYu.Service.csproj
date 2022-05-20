@@ -3,17 +3,8 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="Characters\Classes\**" />
-    <EmbeddedResource Remove="Characters\Classes\**" />
-    <None Remove="Characters\Classes\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="ReheeCmf.Core" Version="6.0.1-d" />
-  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Commons\MoYu.Common\MoYu.Common.csproj" />

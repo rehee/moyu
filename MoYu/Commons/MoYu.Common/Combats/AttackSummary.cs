@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MoYu.Entities.Items.Equipments
+namespace MoYu.Common.Combats
 {
-  public class BodyEquip : EquipmentBase
+  public class AttackSummary
   {
+
   }
 }

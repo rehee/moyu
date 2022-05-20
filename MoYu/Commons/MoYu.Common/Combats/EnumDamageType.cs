@@ -4,9 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MoYu.Entities.Items.Equipments
+namespace MoYu.Common.Combats
 {
-  public class BodyEquip : EquipmentBase
+  public enum EnumDamageType
   {
+    Physic,
+    Fire,
+    Lightning,
+    Cold,
+    Poison,
+    Magic
   }
 }
