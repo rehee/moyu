@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MoYu.Entities.Items.Equipments
+namespace MoYu.Common.Items
 {
-  public enum EnmWeaponHand
+  public interface IBluePrint
   {
-    OneHand,
-    MainHand,
-    OffHand,
-    TwoHand
+    
   }
 }

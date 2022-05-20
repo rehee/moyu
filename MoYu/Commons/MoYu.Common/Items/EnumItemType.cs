@@ -8,14 +8,18 @@ namespace MoYu.Common.Items
 {
   public enum EnumItemType
   {
-    BeltEquip = 1,
-    BodyEquip = 2,
-    FeetEquip = 3,
-    HandEquip = 4,
-    HeadEquip = 5,
-    LegEquip = 6,
-    NeckEquip = 7,
-    RingEquip = 8,
-    WeaponEquip = 9,
+    Belt = 1,
+    Body = 2,
+    Feet = 3,
+    Hand = 4,
+    Head = 5,
+    Leg = 6,
+    Neck = 7,
+    Ring = 8,
+    Weapon = 9,
+    Gem = 10,
+    Rune = 11,
+    Charm = 12,
+    Jewel = 13,
   }
 }

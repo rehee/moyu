@@ -1,9 +1,12 @@
 using Authenticates;
 using Entities;
+using FluentEmail.Core;
 using Inject;
+using JWT;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Modules;
 using MoYu.Api.Data;
 using ODataControllers;
 using ReheeCmf.AdminPages;
@@ -17,6 +20,41 @@ namespace MoYu.Api
     {
       var host = CreateHostBuilder(args).Build();
       PropertyInject.Provider = host.Services;
+      using (var scope = host.Services.CreateScope())
+      {
+        using (var rm = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>())
+        {
+          var r = await rm.CreateAsync(new IdentityRole()
+          {
+            Name = "Admin"
+          });
+        }
+        using (var um = scope.ServiceProvider.GetRequiredService<UserManager<ReheeCmfBaseUser>>())
+        {
+          var u = new ReheeCmfBaseUser()
+          {
+            UserName = "u1",
+            Email = "u1@u1.com"
+          };
+          var users = await um.CreateAsync(u, "Password123!");
+          var addRoles = await um.AddToRoleAsync(u, "Admin");
+          foreach (var module in ModuleOption.ModuleMap
+            .Select(b => scope.ServiceProvider.GetService(b.Value) as IModuleBase)
+            .Where(b => b != null)
+            .OrderByDescending(b => b.Index).ToArray())
+          {
+            var adminPermissionResponse = await module.GetRoleBasedPermissionAsync("Admin", "");
+            if (adminPermissionResponse.Success)
+            {
+              foreach (var permission in adminPermissionResponse.Content.Items)
+              {
+                permission.Value = "True";
+              }
+              var result = await module.UpdateRoleBasedPermissionAsync("Admin", adminPermissionResponse.Content, "");
+            }
+          }
+        }
+      }
       host.Run();
 
     }
