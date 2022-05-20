@@ -38,10 +38,7 @@ namespace MoYu.Api
           };
           var users = await um.CreateAsync(u, "Password123!");
           var addRoles = await um.AddToRoleAsync(u, "Admin");
-          foreach (var module in ModuleOption.ModuleMap
-            .Select(b => scope.ServiceProvider.GetService(b.Value) as IModuleBase)
-            .Where(b => b != null)
-            .OrderByDescending(b => b.Index).ToArray())
+          foreach (var module in ModuleOption.GetModuleBases(scope.ServiceProvider))
           {
             var adminPermissionResponse = await module.GetRoleBasedPermissionAsync("Admin", "");
             if (adminPermissionResponse.Success)

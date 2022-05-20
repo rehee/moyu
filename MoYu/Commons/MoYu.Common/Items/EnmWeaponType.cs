@@ -9,8 +9,6 @@ namespace MoYu.Common.Items
   public enum EnmWeaponType
   {
     Axe,
-    Bow,
-    CrossBow,
     Dagger,
     Javelin,
     Mace,
@@ -20,6 +18,9 @@ namespace MoYu.Common.Items
     Sword,
     Throwing,
     Wand,
-    Shield
+    Shield,
+    Bow,
+    CrossBow,
+    Quiver,
   }
 }
