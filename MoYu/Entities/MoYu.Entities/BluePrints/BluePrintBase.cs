@@ -10,9 +10,13 @@ namespace MoYu.Entities.BluePrints
 {
   public class BluePrintBase : EntityBase<long>, IBluePrint
   {
+    public BluePrintBase()
+    {
+
+    }
     public string Name { get; set; }
-    public uint Durability { get; set; }
-    public uint QualityLevel { get; set; }
+    public int Durability { get; set; }
+    public int QualityLevel { get; set; }
 
 
   }

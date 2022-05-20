@@ -1,4 +1,5 @@
 ﻿using Cruds;
+using FormInputs;
 using Grids;
 using MoYu.Common.Items;
 using System;
@@ -14,8 +15,9 @@ namespace MoYu.Entities.BluePrints
   {
     public EnmWeaponType WeaponType { get; set; }
     public EnmWeaponHand WeaponHand { get; set; }
-    public uint DamageMin { get; set; }
-    public uint DamageMax { get; set; }
+    [FormInputs(InputType = EnumInputType.Number)]
+    public int DamageMin { get; set; }
+    public int DamageMax { get; set; }
     public decimal AttackSpeed { get; set; }
 
   }
