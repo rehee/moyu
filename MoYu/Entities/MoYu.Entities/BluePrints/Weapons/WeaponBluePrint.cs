@@ -5,6 +5,7 @@ using MoYu.Common.Items;
 using MoYu.Entities.BluePrints.Weapons;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,11 @@ namespace MoYu.Entities.BluePrints
   public class WeaponBluePrint : BluePrintBase
   {
     [FormInputs(InputType = EnumInputType.DropDown, RelatedEntity = typeof(WeaponBluePrintBase))]
-    public int BaseId { get; set; }
+    [ForeignKey(nameof(WeaponBluePrintBase))]
+    public long BaseId { get; set; }
+    public virtual WeaponBluePrintBase BaseWeapon { get; set; }
+    [FormInputs(InputType = EnumInputType.DropDown)]
+    public EnumItemMaterial Material { get; set; }
 
     [FormInputs(InputType = EnumInputType.Number)]
     public int DamageMin { get; set; }

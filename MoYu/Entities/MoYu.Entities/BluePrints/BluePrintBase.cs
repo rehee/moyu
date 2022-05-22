@@ -12,7 +12,7 @@ namespace MoYu.Entities.BluePrints
 {
   public class BluePrintBase : EntityBase<long>, ISelect
   {
-    [FormInputs(InputType = EnumInputType.Text, DisplayOrder = 99)]
+    [FormInputs(InputType = EnumInputType.Text, DisplayOrder = -1)]
     public string Name { get; set; }
     public EnumItemType ItemType { get; set; }
     public virtual string SelectValue
