@@ -3,7 +3,9 @@ using Entities;
 using Microsoft.AspNetCore.Http.Features;
 using MoYu.Api.Data;
 using MoYu.Common.Combats;
+using MoYu.Common.Items;
 using MoYu.Service.Combats;
+using MoYu.Service.Items;
 using MoYu.WorkerService;
 using ODataControllers;
 using ReheeCmf.AdminPages;
@@ -34,6 +36,8 @@ namespace MoYu.Api
       services.AddCors();
       services.AddSingleton<IAttackService, AttackService>();
       services.AddHostedService<Worker>();
+      services.AddScoped<SeedData, SeedData>();
+      services.AddScoped<IItemService, ItemService>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

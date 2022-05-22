@@ -1,5 +1,9 @@
-﻿using MoYu.Common;
+﻿using Cruds;
+using MoYu.Common;
+using MoYu.Common.Extensions;
 using MoYu.Common.Items;
+using MoYu.Entities.BluePrints.Equips.Weapons;
+using MoYu.Entities.Items.Equipments;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,21 +14,26 @@ namespace MoYu.Service.Items
 {
   public class ItemService : IItemService
   {
-    protected Random rdm;
     protected EnumItemType[] itemTypes;
-    public ItemService()
+    protected EnumWeaponType[] weaponTypes;
+    protected WeaponBaseBluePrint[] weaponBases;
+    protected WeaponBluePrint[] weapons;
+    protected EnumItemQuality[] qualities;
+    private readonly IContext context;
+
+    public ItemService(IContextFactory factory)
     {
-      rdm = new Random();
-      var property = typeof(EnumItemType).GetAllFields().Where(b => b.FieldType == typeof(EnumItemType)).ToList();
-      itemTypes = property.Select(b => b.GetValue(null)).Select(b =>
-      {
-        if (b is EnumItemType enums)
-        {
-          return (EnumItemType?)enums;
-        }
-        return null;
-      }).Where(b => b.HasValue).Select(b => b.Value).ToArray();
+      itemTypes = MoYEnum.GetEnumTypeList<EnumItemType>();
+      weaponTypes = MoYEnum.GetEnumTypeList<EnumWeaponType>();
+      qualities = MoYEnum.GetEnumTypeList<EnumItemQuality>();
+      this.context = factory.CreateContext();
+      weaponBases = context.Read<WeaponBaseBluePrint>().Content.ToArray();
+      weapons = context.Read<WeaponBluePrint>().Content.ToArray();
+
     }
+
+
+
     public RequestResponse<IMoYuItem[]> DropItem(IDroppable dropper)
     {
       var result = new RequestResponse<IMoYuItem[]>();
@@ -41,13 +50,37 @@ namespace MoYu.Service.Items
         return;
       }
 
+      var dropType = GetRamdonType();
 
     }
 
     protected virtual EnumItemType GetRamdonType()
     {
-      var index = rdm.Next(0, itemTypes.Length);
-      return itemTypes[index];
+      return itemTypes.GetRamdon();
+    }
+
+
+
+    public IMoYuItem DropWeapon(int treasureLevel)
+    {
+      var randomWeaponType = weaponBases
+        .Where(b => b.Weapons.Any(w => w.QualityLevel <= treasureLevel))
+        .GroupBy(b => b.WeaponType)
+        .Select(b => b.Key)
+        .ToArray()
+        .GetRamdon();
+      var w = weapons
+        .Where(b => b.BaseWeapon.WeaponType == randomWeaponType && b.QualityLevel <= treasureLevel)
+        .ToArray()
+        .GetRamdon();
+      var wbItem = w.GenerateItem();
+      if (wbItem is WeaponEquip weapon)
+      {
+        weapon.Quality = MoYuRandom.GetQuality(1000, 1, 1, 1, 5);
+        weapon.IsEthereal = MoYuRandom.GetEthereal();
+      }
+
+      return wbItem;
     }
   }
 }

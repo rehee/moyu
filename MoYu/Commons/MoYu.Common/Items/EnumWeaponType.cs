@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MoYu.Common.Items
 {
-  public enum EnmWeaponType
+  public enum EnumWeaponType
   {
     Axe,
     Dagger,

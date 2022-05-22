@@ -22,34 +22,10 @@ namespace MoYu.Api
       PropertyInject.Provider = host.Services;
       using (var scope = host.Services.CreateScope())
       {
-        using (var rm = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>())
+        using (var sd = scope.ServiceProvider.GetRequiredService<SeedData>())
         {
-          var r = await rm.CreateAsync(new IdentityRole()
-          {
-            Name = "Admin"
-          });
-        }
-        using (var um = scope.ServiceProvider.GetRequiredService<UserManager<ReheeCmfBaseUser>>())
-        {
-          var u = new ReheeCmfBaseUser()
-          {
-            UserName = "u1",
-            Email = "u1@u1.com"
-          };
-          var users = await um.CreateAsync(u, "Password123!");
-          var addRoles = await um.AddToRoleAsync(u, "Admin");
-          foreach (var module in ModuleOption.GetModuleBases(scope.ServiceProvider))
-          {
-            var adminPermissionResponse = await module.GetRoleBasedPermissionAsync("Admin", "");
-            if (adminPermissionResponse.Success)
-            {
-              foreach (var permission in adminPermissionResponse.Content.Items)
-              {
-                permission.Value = "True";
-              }
-              var result = await module.UpdateRoleBasedPermissionAsync("Admin", adminPermissionResponse.Content, "");
-            }
-          }
+          await sd.InitData();
+          
         }
       }
       host.Run();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MoYu.Common.Items
 {
-  public enum EnmWeaponHand
+  public enum EnumWeaponHand
   {
     OneHand,
     MainHand,

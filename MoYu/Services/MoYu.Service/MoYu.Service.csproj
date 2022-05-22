@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Commons\MoYu.Common\MoYu.Common.csproj" />
+    <ProjectReference Include="..\..\Entities\MoYu.Entities\MoYu.Entities.csproj" />
   </ItemGroup>
 
 </Project>

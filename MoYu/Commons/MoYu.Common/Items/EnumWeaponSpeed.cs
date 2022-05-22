@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace MoYu.Common.Items
 {
-  public interface IItemService
+  public enum EnumWeaponSpeed
   {
-    IMoYuItem DropWeapon(int treasureLevel);
+
   }
 }

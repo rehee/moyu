@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MoYu.Api.Data;
 using MoYu.Api.Models;
+using MoYu.Common.Items;
 using MoYu.Entities.Characters;
 using MoYu.Entities.Items.Equipments;
 using System.Diagnostics;
@@ -10,18 +11,18 @@ namespace MoYu.Api.Controllers
   public class HomeController : Controller
   {
     private readonly ILogger<HomeController> _logger;
-    private readonly ApplicationDbContext db;
+    private readonly IItemService itemService;
 
-    public HomeController(ILogger<HomeController> logger, ApplicationDbContext db)
+    public HomeController(ILogger<HomeController> logger, IItemService itemService)
     {
       _logger = logger;
-      this.db = db;
+      this.itemService = itemService;
     }
 
     public IActionResult Index()
     {
-
-      return Content("");
+      var randomItem = itemService.DropWeapon(99);
+      return Ok(randomItem);
     }
 
     public IActionResult Privacy()

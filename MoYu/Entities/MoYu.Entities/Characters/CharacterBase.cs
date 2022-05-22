@@ -35,7 +35,7 @@ namespace MoYu.Entities.Characters
     {
       get
       {
-        var weaponMin = MainHand != null ? new BigInteger(MainHand.MinDamage) : new BigInteger(1);
+        var weaponMin = MainHand != null ? new BigInteger(MainHand.DamageMin) : new BigInteger(1);
 
         return weaponMin;
       }
@@ -44,7 +44,7 @@ namespace MoYu.Entities.Characters
     {
       get
       {
-        var weaponMax = MainHand != null ? new BigInteger(MainHand.MaxDamage) : new BigInteger(1);
+        var weaponMax = MainHand != null ? new BigInteger(MainHand.DamageMax) : new BigInteger(1);
 
         return weaponMax;
       }

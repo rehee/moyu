@@ -30,8 +30,8 @@ namespace MoYu.Entities.Games
         MainHand = new WeaponEquip()
         {
           AttackSpeed = 3m,
-          MinDamage = 1,
-          MaxDamage = 8,
+          DamageMin = 1,
+          DamageMax = 8,
 
         }
       };

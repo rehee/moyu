@@ -18,5 +18,9 @@ namespace MoYu.Common
     public const decimal SuperiorModifyRange = 0.05m;
     public const int EtherealRange = 5;
     public const decimal EtherealModify = 0.5m;
+    public const int PrefixMagic = 1;
+    public const int PrefixRare = 2;
+    public const int SuffixMagic = 1;
+    public const int SuffixRare = 2;
   }
 }

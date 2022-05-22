@@ -13,5 +13,6 @@ namespace MoYu.Entities.Items
     {
 
     }
+    public EnumItemType ItemType { get; set; }
   }
 }

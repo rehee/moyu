@@ -21,5 +21,6 @@ namespace MoYu.Common.Items
     Rune = 11,
     Charm = 12,
     Jewel = 13,
+    Gold = 14,
   }
 }

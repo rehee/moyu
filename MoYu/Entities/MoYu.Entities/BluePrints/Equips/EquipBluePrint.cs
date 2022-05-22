@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MoYu.Common.Items
+namespace MoYu.Entities.BluePrints.Equips
 {
-  public interface IItemService
+  public abstract class EquipBluePrint : BluePrintBase
   {
-    IMoYuItem DropWeapon(int treasureLevel);
+    
   }
 }
