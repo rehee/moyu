@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MoYu.Entities.Items.Equipments
+namespace MoYu.Entities.Items.Equipments.Armors
 {
-  public class HeadEquip : EquipmentBase
+  public class NeckEquip: ArmorEquip
   {
   }
 }

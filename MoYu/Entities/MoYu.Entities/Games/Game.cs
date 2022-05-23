@@ -3,6 +3,7 @@ using MoYu.Common.Combats;
 using MoYu.Common.Games;
 using MoYu.Entities.Characters;
 using MoYu.Entities.Items.Equipments;
+using MoYu.Entities.Items.Equipments.Weapons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +33,6 @@ namespace MoYu.Entities.Games
           AttackSpeed = 3m,
           DamageMin = 1,
           DamageMax = 8,
-
         }
       };
       Player.JoinGame(this);

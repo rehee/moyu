@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MoYu.Entities.Items.Equipments
+namespace MoYu.Entities.Items.Equipments.Weapons
 {
   public class WeaponEquip : EquipmentBase
   {
@@ -27,6 +27,12 @@ namespace MoYu.Entities.Items.Equipments
 
       };
     }
+
+    public override void PickUp()
+    {
+      throw new NotImplementedException();
+    }
+
     public EnumWeaponType WeaponType { get; set; }
     public EnumWeaponHand WeaponHand { get; set; }
     public virtual decimal AttackSpeed { get; set; }

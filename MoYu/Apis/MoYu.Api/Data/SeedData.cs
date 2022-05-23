@@ -1,5 +1,6 @@
 ﻿using Entities;
 using Microsoft.AspNetCore.Identity;
+using MiniExcelLibs;
 using Modules;
 using MoYu.Common.Items;
 using MoYu.Entities.BluePrints.Equips.Weapons;
@@ -36,39 +37,30 @@ namespace MoYu.Api.Data
     }
     public async Task InitWeapon()
     {
-      var sword = new WeaponBaseBluePrint()
+      var rootFolder = Directory.GetCurrentDirectory();
+      var weaponBases = MiniExcel.Query<WeaponBaseBluePrint>($"{rootFolder}/Data/DataInput.xlsx", "WeaponBase").ToArray();
+      var weapons = MiniExcel.Query<WeaponBluePrint>($"{rootFolder}/Data/DataInput.xlsx", "Weapon").ToArray();
+      foreach (var w in weaponBases)
       {
-        WeaponType = EnumWeaponType.Sword,
-        WeaponHand = EnumWeaponHand.OneHand,
-        AttackSpeed = 1.2m,
-        Name = "单手剑"
-      };
-      context.Add(sword);
-      await context.SaveChangesAsync();
-      foreach (var s in sword.Weapons.ToArray())
-      {
-        switch (s.Material)
-        {
-          case EnumItemMaterial.Normal:
-            s.Name = "单手剑";
-            s.DamageMin = 1;
-            s.DamageMax = 6;
-            s.QualityLevel = 1;
-            break;
-          case EnumItemMaterial.Extend:
-            s.Name = "扩展单手剑";
-            s.DamageMin = 12;
-            s.DamageMax = 24;
-            s.QualityLevel = 24;
-            break;
-          case EnumItemMaterial.Elite:
-            s.Name = "精英单手剑";
-            s.DamageMin = 36;
-            s.DamageMax = 48;
-            s.QualityLevel = 48;
-            break;
-        }
+        context.Add(w);
       }
+      await context.SaveChangesAsync();
+
+      var wps = context.WeaponBluePrints.ToArray();
+      foreach (var wp in wps)
+      {
+        var wpInput = weapons.Where(b => wp.BaseWeapon.Name == b.BaseName && b.Material == wp.Material).FirstOrDefault();
+        if(wpInput == null)
+        {
+          continue;
+        }
+        wp.Name = wpInput.Name;
+        wp.DamageMin = wpInput.DamageMin;
+        wp.DamageMax = wpInput.DamageMax;
+        wp.Durability = wpInput.Durability;
+        wp.QualityLevel = wpInput.QualityLevel;
+      }
+
       await context.SaveChangesAsync();
 
     }

@@ -5,6 +5,8 @@ using MoYu.Common.Combats;
 using MoYu.Common.Games;
 using MoYu.Common.Skills;
 using MoYu.Entities.Items.Equipments;
+using MoYu.Entities.Items.Equipments.Armors;
+using MoYu.Entities.Items.Equipments.Weapons;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;

@@ -17,6 +17,13 @@ namespace MoYu.Entities.Items.Equipments
     public EnumItemQuality Quality { get; set; }
     [DataMember]
     public bool IsEthereal { get; set; }
+    public void SetEthereal(bool isEthereal = false)
+    {
+      if (!isEthereal)
+      {
+        return;
+      }
+    }
     public virtual void Equip()
     {
 

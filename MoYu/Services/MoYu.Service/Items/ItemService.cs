@@ -4,6 +4,7 @@ using MoYu.Common.Extensions;
 using MoYu.Common.Items;
 using MoYu.Entities.BluePrints.Equips.Weapons;
 using MoYu.Entities.Items.Equipments;
+using MoYu.Entities.Items.Equipments.Weapons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -77,7 +78,7 @@ namespace MoYu.Service.Items
       if (wbItem is WeaponEquip weapon)
       {
         weapon.Quality = MoYuRandom.GetQuality(1000, 1, 1, 1, 5);
-        weapon.IsEthereal = MoYuRandom.GetEthereal();
+        weapon.SetEthereal(MoYuRandom.GetEthereal());
       }
 
       return wbItem;
