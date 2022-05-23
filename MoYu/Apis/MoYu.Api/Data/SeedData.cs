@@ -38,8 +38,9 @@ namespace MoYu.Api.Data
     public async Task InitWeapon()
     {
       var rootFolder = Directory.GetCurrentDirectory();
-      var weaponBases = MiniExcel.Query<WeaponBaseBluePrint>($"{rootFolder}/Data/DataInput.xlsx", "WeaponBase").ToArray();
-      var weapons = MiniExcel.Query<WeaponBluePrint>($"{rootFolder}/Data/DataInput.xlsx", "Weapon").ToArray();
+      var file = $"{rootFolder}/Data/DataInput.xlsm";
+      var weaponBases = MiniExcel.Query<WeaponBaseBluePrint>(file, "WeaponBase").ToArray();
+      var weapons = MiniExcel.Query<WeaponBluePrint>(file, "Weapon").ToArray();
       foreach (var w in weaponBases)
       {
         context.Add(w);

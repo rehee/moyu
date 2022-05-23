@@ -38,5 +38,7 @@ namespace MoYu.Entities.BluePrints.Affixes
     public string DamagePoisonRange { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     public string PoisonTimeSecondRange { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     public string DefencePercentageRange { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+    public int ALevel { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+    public bool IsPrefix { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
   }
 }

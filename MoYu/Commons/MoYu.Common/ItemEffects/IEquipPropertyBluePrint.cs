@@ -12,6 +12,8 @@ namespace MoYu.Common.ItemEffects
     string Name { get; }
     EnumAffixesGroup Group { get; set; }
     string ItemTypes { get; set; }
+    int ALevel { get; set; }
+    bool IsPrefix { get; set; }
     string StrengthRange { get; set; }
     string DexterityRange { get; set; }
     string VitalityRange { get; set; }
