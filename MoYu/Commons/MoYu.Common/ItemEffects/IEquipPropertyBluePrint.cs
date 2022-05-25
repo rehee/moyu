@@ -1,4 +1,5 @@
 ﻿using MoYu.Common.Affixes;
+using MoYu.Common.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,11 @@ namespace MoYu.Common.ItemEffects
   {
     string Name { get; }
     EnumAffixesGroup Group { get; set; }
-    string ItemTypes { get; set; }
+    IEnumerable<EnumItemType> ItemTypes { get; set; }
+    string ItemTypeValue { get; set; }
     int ALevel { get; set; }
     bool IsPrefix { get; set; }
+    void SetAffixes(IEquipProperty item);
     string StrengthRange { get; set; }
     string DexterityRange { get; set; }
     string VitalityRange { get; set; }

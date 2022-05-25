@@ -22,9 +22,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{F3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Commons", "Commons", "{3911F041-E035-4201-A541-29E0311EDFF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoYu.Common", "Commons\MoYu.Common\MoYu.Common.csproj", "{DC36265E-F2F3-4D48-AEE9-360B1F1CA30D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoYu.Common", "Commons\MoYu.Common\MoYu.Common.csproj", "{DC36265E-F2F3-4D48-AEE9-360B1F1CA30D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoYu.Service", "Services\MoYu.Service\MoYu.Service.csproj", "{E54B50C2-FF4B-42AB-BBB0-70A7BCEF2FC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoYu.Service", "Services\MoYu.Service\MoYu.Service.csproj", "{E54B50C2-FF4B-42AB-BBB0-70A7BCEF2FC3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B1B3205E-CAE4-43AB-9F53-207074468695}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoYu.Tests", "Tests\MoYu.Tests\MoYu.Tests.csproj", "{C81301AB-01E7-40DE-B5A3-7B0502B8B90F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,6 +56,10 @@ Global
 		{E54B50C2-FF4B-42AB-BBB0-70A7BCEF2FC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E54B50C2-FF4B-42AB-BBB0-70A7BCEF2FC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E54B50C2-FF4B-42AB-BBB0-70A7BCEF2FC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C81301AB-01E7-40DE-B5A3-7B0502B8B90F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C81301AB-01E7-40DE-B5A3-7B0502B8B90F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C81301AB-01E7-40DE-B5A3-7B0502B8B90F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C81301AB-01E7-40DE-B5A3-7B0502B8B90F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +70,7 @@ Global
 		{42EDAC72-7E9C-45B5-8110-8A3F6E24F822} = {F986EBEB-7041-4E90-9F7C-7BAED188B18A}
 		{DC36265E-F2F3-4D48-AEE9-360B1F1CA30D} = {3911F041-E035-4201-A541-29E0311EDFF0}
 		{E54B50C2-FF4B-42AB-BBB0-70A7BCEF2FC3} = {F3A6282E-629E-496E-A762-907B7B25AE10}
+		{C81301AB-01E7-40DE-B5A3-7B0502B8B90F} = {B1B3205E-CAE4-43AB-9F53-207074468695}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B385F03-254C-42FA-80BE-6F06530E01F9}
