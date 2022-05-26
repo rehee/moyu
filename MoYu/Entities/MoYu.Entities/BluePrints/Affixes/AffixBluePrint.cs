@@ -39,11 +39,21 @@ namespace MoYu.Entities.BluePrints.Affixes
         ItemTypeValue = String.Join(",", value.Select(b => b.ToString()));
       }
     }
+    public EnumItemQuality Quality { get; set; }
     public string ItemTypeValue { get; set; }
     public int ALevel { get; set; }
     public bool IsPrefix { get; set; }
     public void SetAffixes(IEquipProperty item)
     {
+      if (IsPrefix)
+      {
+        item.PrefixName = (Name + " " + item.PrefixName).Trim();
+      }
+      else
+      {
+        item.SuffixName = (Name + " " + item.SuffixName).Trim();
+      }
+
       var properties = this.GetMap().Properties.Select(p => (p, p.GetCustomAttributes<AffixeAttribute>())).Where(b => b.Item2 != null).ToList();
       foreach (var p in properties)
       {

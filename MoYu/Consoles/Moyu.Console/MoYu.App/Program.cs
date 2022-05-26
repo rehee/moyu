@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using MoYu.Common;
+using System.Numerics;
 
 namespace MoYu.App
 {
@@ -6,7 +7,11 @@ namespace MoYu.App
   {
     static void Main(string[] args)
     {
-      Console.WriteLine("Hello, World!");
+
+      for (var i = 0; i < 100; i++)
+      {
+        Console.WriteLine(MoYuRandom.GetNext(0, 2));
+      }
     }
   }
 }

@@ -83,5 +83,50 @@ namespace MoYu.Service.Items
 
       return wbItem;
     }
+
+    public void SetAffixes(IMoYuItem item)
+    {
+
+      if (item is EquipmentBase equip != true)
+      {
+        return;
+      }
+      var quality = equip.Quality;
+      int prefix = 0;
+      int suffix = 0;
+      if (equip.Quality == EnumItemQuality.Magic)
+      {
+        prefix = MoYuRandom.GetNext(0, General.PrefixMagic + 1);
+        suffix = MoYuRandom.GetNext(0, General.SuffixMagic + 1);
+
+      }
+      if (equip.Quality == EnumItemQuality.Rare)
+      {
+        prefix = MoYuRandom.GetNext(0, General.PrefixRare + 1);
+        suffix = MoYuRandom.GetNext(0, General.SuffixRare + 1);
+      }
+      if (prefix == 0 && suffix == 0)
+      {
+        var isPrefix = MoYuRandom.GetNext(0, 2);
+        if (isPrefix == 1)
+        {
+          prefix = 1;
+        }
+        else
+        {
+          suffix = 1;
+        }
+      }
+
+      var prefixs = General.Affixes
+        .Where(b => b.IsPrefix && b.Quality == quality && b.ALevel <= equip.ItemLevel && b.ItemTypes.Contains(equip.ItemType))
+        .ToArray().GroupBy(b => b.Group);
+      var preGroup = prefixs.ToArray().GetRandomIn(prefix);
+      foreach (var p in preGroup)
+      {
+        var uniq = p.GroupBy(b => b.Name).Select(b => b.OrderByDescending(b => b.ALevel).First()).ToArray().GetRamdon();
+        uniq.SetAffixes(item);
+      }
+    }
   }
 }

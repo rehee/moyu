@@ -22,7 +22,7 @@ namespace MoYu.Tests.AffixTests
       var bluePrint = new AffixBluePrint();
       bluePrint.StrengthRange = "1";
       var equip = new TestEquipProperty();
-      
+
       equip.Dexterity = 1;
       bluePrint.DexterityRange = "2,2";
       bluePrint.SetAffixes(equip);
@@ -31,7 +31,7 @@ namespace MoYu.Tests.AffixTests
     }
   }
 
-  public class TestEquipProperty : IEquipProperty 
+  public class TestEquipProperty : IEquipProperty
   {
     public int Strength { get; set; }
     public int Dexterity { get; set; }
@@ -52,6 +52,8 @@ namespace MoYu.Tests.AffixTests
     public int PoisonTimeSecond { get; set; }
     public int Defence { get; set; }
     public int DefencePercentage { get; set; }
+    public string PrefixName { get; set; }
+    public string SuffixName { get; set; }
   }
 
 }

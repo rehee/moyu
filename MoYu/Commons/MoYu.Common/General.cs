@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MoYu.Common.ItemEffects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,5 +23,7 @@ namespace MoYu.Common
     public const int PrefixRare = 3;
     public const int SuffixMagic = 1;
     public const int SuffixRare = 3;
+
+    public static IEquipPropertyBluePrint[] Affixes { get; set; }
   }
 }

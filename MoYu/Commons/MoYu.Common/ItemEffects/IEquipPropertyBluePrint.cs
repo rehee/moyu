@@ -13,6 +13,7 @@ namespace MoYu.Common.ItemEffects
     string Name { get; }
     EnumAffixesGroup Group { get; set; }
     IEnumerable<EnumItemType> ItemTypes { get; set; }
+    EnumItemQuality Quality { get; set; }
     string ItemTypeValue { get; set; }
     int ALevel { get; set; }
     bool IsPrefix { get; set; }

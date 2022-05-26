@@ -75,5 +75,21 @@ namespace MoYu.Common
       var index2 = GetRamdon().Next(0, input.Length);
       return input[index2];
     }
+
+    public static List<T> GetRandomIn<T>(this T[] input, int number, List<T> result = null)
+    {
+      if (result == null)
+      {
+        result = new List<T>();
+      }
+      if (input.Length <= 0 || number <= 0)
+      {
+        return result;
+      }
+      var index2 = GetRamdon().Next(0, input.Length);
+      result.Add(input[index2]);
+      GetRandomIn(input.Where((b, i) => i != index2).ToArray(), number - 1, result);
+      return result;
+    }
   }
 }

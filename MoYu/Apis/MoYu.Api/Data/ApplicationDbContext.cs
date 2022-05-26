@@ -1,6 +1,7 @@
 ﻿using Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using MoYu.Entities.BluePrints.Affixes;
 using MoYu.Entities.BluePrints.Equips.Weapons;
 using ReheeCmf.DBContext;
 
@@ -15,5 +16,6 @@ namespace MoYu.Api.Data
 
     public DbSet<WeaponBaseBluePrint> WeaponBaseBluePrints { get; set; }
     public DbSet<WeaponBluePrint> WeaponBluePrints { get; set; }
+    public DbSet<AffixBluePrint> AffixBluePrints { get; set; }
   }
 }

@@ -8,6 +8,8 @@ namespace MoYu.Common.ItemEffects
 {
   public interface IEquipProperty
   {
+    string PrefixName { get; set; }
+    string SuffixName { get; set; }
     int Strength { get; set; }
     int Dexterity { get; set; }
     int Vitality { get; set; }
