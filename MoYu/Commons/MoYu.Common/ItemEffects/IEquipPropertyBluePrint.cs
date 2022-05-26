@@ -36,6 +36,6 @@ namespace MoYu.Common.ItemEffects
     string DamagePoisonRange { get; set; }
     string PoisonTimeSecondRange { get; set; }
     string DefencePercentageRange { get; set; }
-
+    string SocketRange { get; set; }
   }
 }

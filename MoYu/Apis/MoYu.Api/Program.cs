@@ -28,6 +28,11 @@ namespace MoYu.Api
           await sd.InitData();
 
         }
+        
+      }
+      using (var scope = host.Services.CreateScope())
+      {
+        
         using (var context = scope.ServiceProvider.GetService<ApplicationDbContext>())
         {
           General.Affixes = context.AffixBluePrints.ToArray();

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using MiniExcelLibs;
 using Modules;
 using MoYu.Common.Items;
+using MoYu.Entities.BluePrints.Affixes;
 using MoYu.Entities.BluePrints.Equips.Weapons;
 using System;
 
@@ -61,7 +62,12 @@ namespace MoYu.Api.Data
         wp.Durability = wpInput.Durability;
         wp.QualityLevel = wpInput.QualityLevel;
       }
-
+      await context.SaveChangesAsync();
+      var affixBluePrint = MiniExcel.Query<AffixBluePrint>(file, "AffixBluePrint").ToArray();
+      foreach(var a in affixBluePrint)
+      {
+        context.AffixBluePrints.Add(a);
+      }
       await context.SaveChangesAsync();
 
     }

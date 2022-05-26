@@ -29,6 +29,6 @@ namespace MoYu.Common.ItemEffects
     int PoisonTimeSecond { get; set; }
     int Defence { get; set; }
     int DefencePercentage { get; set; }
-
+    int Socket { get; set; }
   }
 }

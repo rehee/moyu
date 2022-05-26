@@ -6,6 +6,7 @@ using MoYu.Common.Items;
 using ReheeCmf.Core.Entities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,7 @@ namespace MoYu.Entities.BluePrints.Affixes
     public string Name { get; set; }
 
     public EnumAffixesGroup Group { get; set; }
+    [NotMapped]
     public IEnumerable<EnumItemType> ItemTypes
     {
       get
@@ -132,5 +134,7 @@ namespace MoYu.Entities.BluePrints.Affixes
 
     [Affixe(nameof(IEquipProperty.DefencePercentage))]
     public string DefencePercentageRange { get; set; }
+    [Affixe(nameof(IEquipProperty.Socket))]
+    public string SocketRange { get; set; }
   }
 }

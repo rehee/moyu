@@ -35,6 +35,7 @@ namespace MoYu.Entities.Items
     public int PoisonTimeSecond { get; set; }
     public int Defence { get; set; }
     public int DefencePercentage { get; set; }
+    public int Socket { get; set; }
 
     public abstract void PickUp();
   }
