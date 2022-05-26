@@ -31,7 +31,7 @@ namespace MoYu.Tests.AffixTests
     }
   }
 
-  public class TestEquipProperty : IEquipProperty
+  public class TestEquipProperty : IEquipProperty 
   {
     public int Strength { get; set; }
     public int Dexterity { get; set; }
