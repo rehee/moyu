@@ -8,9 +8,6 @@ namespace MoYu.Entities.Items.Equipments.Armors
 {
   public abstract class ArmorEquip : EquipmentBase
   {
-    public override void PickUp()
-    {
-      throw new NotImplementedException();
-    }
+    
   }
 }

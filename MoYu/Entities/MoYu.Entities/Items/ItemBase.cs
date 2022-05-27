@@ -14,7 +14,10 @@ namespace MoYu.Entities.Items
     {
 
     }
-    public abstract void PickUp();
+    public virtual void PickUp()
+    {
+
+    }
 
     public virtual int ItemLevel { get; set; }
     public EnumItemType ItemType { get; set; }

@@ -27,10 +27,7 @@ namespace MoYu.Entities.Items.Equipments.Weapons
       };
     }
 
-    public override void PickUp()
-    {
-      throw new NotImplementedException();
-    }
+    
 
     public EnumWeaponType WeaponType { get; set; }
     public EnumWeaponHand WeaponHand { get; set; }
