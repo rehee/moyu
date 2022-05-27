@@ -18,6 +18,7 @@ namespace MoYu.Entities.Items
     public EnumItemType ItemType { get; set; }
     [DataMember]
     public string PrefixName { get; set; }
+    [DataMember]
     public string SuffixName { get; set; }
     public int? Strength { get; set; }
     public int? Dexterity { get; set; }
