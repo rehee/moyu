@@ -21,10 +21,9 @@ namespace MoYu.Entities.Items.Equipments.Weapons
         ItemType = bluePrint.BaseWeapon.ItemType,
         WeaponType = bluePrint.BaseWeapon.WeaponType,
         WeaponHand = bluePrint.BaseWeapon.WeaponHand,
-        DamageMin = bluePrint.DamageMin,
-        DamageMax = bluePrint.DamageMax,
+        WeaponDamageMin = bluePrint.DamageMin,
+        WeaponDamageMax = bluePrint.DamageMax,
         AttackSpeed = bluePrint.BaseWeapon.AttackSpeed
-
       };
     }
 
@@ -36,8 +35,8 @@ namespace MoYu.Entities.Items.Equipments.Weapons
     public EnumWeaponType WeaponType { get; set; }
     public EnumWeaponHand WeaponHand { get; set; }
     public virtual decimal AttackSpeed { get; set; }
-    public virtual int DamageMin { get; set; }
-    public virtual int DamageMax { get; set; }
+    public virtual int WeaponDamageMin { get; set; }
+    public virtual int WeaponDamageMax { get; set; }
     public virtual EnumDamageType DamageType { get; set; }
   }
 }

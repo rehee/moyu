@@ -14,12 +14,15 @@ namespace MoYu.Entities.Items
     {
 
     }
+    public abstract void PickUp();
+
     public virtual int ItemLevel { get; set; }
     public EnumItemType ItemType { get; set; }
     [DataMember]
     public string PrefixName { get; set; }
     [DataMember]
     public string SuffixName { get; set; }
+
     public int? Strength { get; set; }
     public int? Dexterity { get; set; }
     public int? Vitality { get; set; }
@@ -41,6 +44,6 @@ namespace MoYu.Entities.Items
     public int? DefencePercentage { get; set; }
     public int? Socket { get; set; }
 
-    public abstract void PickUp();
+
   }
 }
