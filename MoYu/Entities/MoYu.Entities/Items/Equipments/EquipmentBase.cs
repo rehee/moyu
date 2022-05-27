@@ -24,7 +24,7 @@ namespace MoYu.Entities.Items.Equipments
         return;
       }
     }
-    public virtual int ItemLevel { get; set; }
+    
     public virtual void Equip()
     {
 

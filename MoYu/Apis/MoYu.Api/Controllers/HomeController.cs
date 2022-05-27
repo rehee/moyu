@@ -22,6 +22,7 @@ namespace MoYu.Api.Controllers
     public IActionResult Index()
     {
       var randomItem = itemService.DropWeapon(99);
+      itemService.SetAffixes(randomItem);
       return Ok(randomItem);
     }
 

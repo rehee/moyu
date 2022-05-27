@@ -75,6 +75,7 @@ namespace MoYu.Service.Items
         .ToArray()
         .GetRamdon();
       var wbItem = w.GenerateItem();
+      wbItem.ItemLevel = treasureLevel;
       if (wbItem is WeaponEquip weapon)
       {
         weapon.Quality = MoYuRandom.GetQuality(1000, 1, 1, 1, 5);
@@ -91,6 +92,10 @@ namespace MoYu.Service.Items
       {
         return;
       }
+      if (equip.Quality == EnumItemQuality.Normal)
+      {
+        return;
+      }
       var quality = equip.Quality;
       int prefix = 0;
       int suffix = 0;
@@ -100,7 +105,7 @@ namespace MoYu.Service.Items
         suffix = MoYuRandom.GetNext(0, General.SuffixMagic + 1);
 
       }
-      if (equip.Quality == EnumItemQuality.Rare)
+      else
       {
         prefix = MoYuRandom.GetNext(0, General.PrefixRare + 1);
         suffix = MoYuRandom.GetNext(0, General.SuffixRare + 1);
@@ -117,7 +122,7 @@ namespace MoYu.Service.Items
           suffix = 1;
         }
       }
-
+     
       var prefixs = General.Affixes
         .Where(b => b.IsPrefix && b.Quality == quality && b.ALevel <= equip.ItemLevel && b.ItemTypes.Contains(equip.ItemType))
         .ToArray().GroupBy(b => b.Group);

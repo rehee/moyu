@@ -9,5 +9,6 @@ namespace MoYu.Common.Items
 {
   public interface IMoYuItem : IName, IEquipProperty
   {
+    int ItemLevel { get; set; }
   }
 }

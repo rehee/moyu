@@ -17,10 +17,13 @@ namespace MoYu.Common.Items
     Neck = 7,
     Ring = 8,
     Weapon = 9,
-    Gem = 10,
-    Rune = 11,
-    Charm = 12,
-    Jewel = 13,
-    Gold = 14,
+    Shield = 10,
+    Gem = 11,
+    Rune = 12,
+    Charm = 13,
+    BigCharm = 14,
+    LargeCharm = 15,
+    Jewel = 16,
+    Gold = 17,
   }
 }

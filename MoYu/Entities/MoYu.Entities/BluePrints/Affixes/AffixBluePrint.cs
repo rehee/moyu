@@ -77,8 +77,16 @@ namespace MoYu.Entities.BluePrints.Affixes
         {
           randonValue = MoYuRandom.GetNext(minValue, maxValue);
         }
-        var currentValue = (int)p.Item2.Property.GetValue(item);
-        p.Item2.Property.SetValue(item, currentValue + randonValue);
+        var currentValue = (int?)p.Item2.Property.GetValue(item);
+        if (currentValue == null)
+        {
+          currentValue = randonValue;
+        }
+        else
+        {
+          currentValue = currentValue.Value + randonValue;
+        }
+        p.Item2.Property.SetValue(item, currentValue);
       }
     }
     [Affixe(nameof(IEquipProperty.Strength))]
@@ -136,5 +144,10 @@ namespace MoYu.Entities.BluePrints.Affixes
     public string DefencePercentageRange { get; set; }
     [Affixe(nameof(IEquipProperty.Socket))]
     public string SocketRange { get; set; }
+    public string AttackRateVsDemonRange { get; set; }
+    public string AttackRateVsUndeadRange { get; set; }
+    public string DefenceRange { get; set; }
+    public string DefencePerLevel { get; set; }
+    public string DefencePercentagePerLevel { get; set; }
   }
 }

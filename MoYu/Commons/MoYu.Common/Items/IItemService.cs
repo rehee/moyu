@@ -9,5 +9,6 @@ namespace MoYu.Common.Items
   public interface IItemService
   {
     IMoYuItem DropWeapon(int treasureLevel);
+    void SetAffixes(IMoYuItem item);
   }
 }

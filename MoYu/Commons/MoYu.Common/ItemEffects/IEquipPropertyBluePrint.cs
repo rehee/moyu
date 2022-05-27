@@ -28,14 +28,19 @@ namespace MoYu.Common.ItemEffects
     string DamageMaxPerLevelRange { get; set; }
     string DamagePercentageRange { get; set; }
     string DamageMaxRange { get; set; }
+    string AttackRateVsDemonRange { get; set; }
     string DamageVsDemonRange { get; set; }
+    string AttackRateVsUndeadRange { get; set; }
     string DamageVsUndeadRange { get; set; }
     string DamageColdRange { get; set; }
     string DamageFireRange { get; set; }
     string DamageLightningRange { get; set; }
     string DamagePoisonRange { get; set; }
     string PoisonTimeSecondRange { get; set; }
+    string DefenceRange { get; set; }
     string DefencePercentageRange { get; set; }
+    string DefencePerLevel { get; set; }
+    string DefencePercentagePerLevel { get; set; }
     string SocketRange { get; set; }
   }
 }

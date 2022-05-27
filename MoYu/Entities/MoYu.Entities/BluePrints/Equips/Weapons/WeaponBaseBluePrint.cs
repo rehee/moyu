@@ -20,8 +20,20 @@ namespace MoYu.Entities.BluePrints.Equips.Weapons
     {
       this.ItemType = EnumItemType.Weapon;
     }
+    private EnumWeaponType weaponType { get; set; }
     [FormInputs(InputType = EnumInputType.DropDown)]
-    public EnumWeaponType WeaponType { get; set; }
+    public EnumWeaponType WeaponType
+    {
+      get { return weaponType; }
+      set
+      {
+        if (value == EnumWeaponType.Shield)
+        {
+          this.ItemType = EnumItemType.Shield;
+        }
+        weaponType = value;
+      }
+    }
     [FormInputs(InputType = EnumInputType.DropDown)]
     public EnumWeaponHand WeaponHand { get; set; }
     public virtual List<WeaponBluePrint> Weapons { get; set; }
